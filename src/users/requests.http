@@ -1,0 +1,17 @@
+### Create a new user
+
+POST http://localhost:3000/users/new
+Content-Type: application/json
+
+{    
+    "firstname":"raj",
+    "lastname":"kumar",
+    "age":45
+}
+### find a particular user
+GET http://localhost:3000/users/person
+Content-Type: application/json
+
+
+### 
+GET http://localhost:3000
