@@ -14,7 +14,9 @@ export class UsersService {
     }
 
      async findAll(){
-        const user  = await this.repo.find()
+        const user  = await this.repo.findAndCountBy({
+           firstname:'raj'
+        })
         return user
     }
 }
