@@ -8,15 +8,13 @@ export class UsersService {
     constructor(@InjectRepository(User) private repo: Repository<User>){
         
     }
-    create(firstname:string, lastname:string, age:number){
-        const user = this.repo.create({firstname,lastname,age});
+    create(email:string , password:string){
+        const user = this.repo.create({email,password});
         return this.repo.save(user)
     }
 
      async findAll(){
-        const user  = await this.repo.findAndCountBy({
-           firstname:'raj'
-        })
+        const user  = await this.repo.findAndCountBy({})
         return user
     }
 }

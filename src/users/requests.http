@@ -4,9 +4,8 @@ POST http://localhost:3000/users/new
 Content-Type: application/json
 
 {    
-    "firstname":"raj",
-    "lastname":"kumar",
-    "age":45
+    "email":"gulshan",
+    "password":"1234"
 }
 ### find all users
 GET http://localhost:3000/users/person

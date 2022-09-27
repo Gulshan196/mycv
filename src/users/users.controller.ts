@@ -2,12 +2,12 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { createUserDto } from './dtos/create-user-dto';
 import { UsersService } from './users.service';
 
-@Controller('users')
+@Controller('auth')
 export class UsersController {
     constructor(private usersService:UsersService){}
-    @Post('/new')
+    @Post('/signup')
 createUser(@Body() body: createUserDto){
-    this.usersService.create(body.firstname,body.lastname,body.age)
+    this.usersService.create(body.email,body.password);
     console.log(body)
 }
   @Get('/person')

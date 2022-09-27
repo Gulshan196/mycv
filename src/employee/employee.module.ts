@@ -1,6 +1,13 @@
 import { Module } from '@nestjs/common';
-import { Employee } from 'src/Entities/Employee';
+import { EmployeeController } from './employee.controller';
+import { EmployeeService } from './employee.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { EmployeeData } from './entities/employee.entity';
 
-@Module({imports: [ TypeOrmModule.forFeature([Employee]) ]})
+@Module({
+    //if any error comes to find this TypeOrmModule so you need to install this npm `npm i @nestjs/typeorm`.
+  imports: [TypeOrmModule.forFeature([EmployeeData])],
+  controllers: [EmployeeController],
+  providers: [EmployeeService],
+})
 export class EmployeeModule {}
